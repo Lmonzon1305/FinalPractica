@@ -30,9 +30,9 @@ async function cargarPedidos(){
 	
 	for (let pedido of pedidos){
 		
-		let botonEliminar = '<a href="#" onclick="eliminarPedido(' + pedido.id_carrito + ')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>';
+		let botonEliminar = '<a href="#" onclick="eliminarPedido(' + pedido.id_orden + ')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>';
 		
-		let botonEntregar = '<a href="#" onclick="entregarPedido(\'' + pedido.id_carrito + '\')" class="btn btn-success btn-circle"><i class="fas fa-check"></i></a>';
+		let botonEntregar = '<a href="#" onclick="entregarPedido(' + pedido.id_orden + ')" class="btn btn-primary btn-circle"><i class="fas fa-edit"></i></a>';
 				
 		let pedidoshtml = '<tr><td>' + pedido.id + '</td><td>' + pedido.id_orden + '</td><td>' + pedido.fecha + '</td><td>'
 		 + pedido.importe + '</td><td>' + pedido.tipoPago + '</td><td>' + pedido.estado + '</td><td>' + botonEntregar + botonEliminar + '</td></tr>';
@@ -44,12 +44,12 @@ async function cargarPedidos(){
 	document.querySelector('#pedidos tbody').outerHTML = listadoHTML;
 }
 
-async function eliminarPedido(id_carrito){
+async function eliminarPedido(id_orden){
 	if(!confirm("Se cancelo el Pedido?")){
 		return;
 	}
 	
-	const request = await fetch('api/pedido/eliminar/' + id_carrito,{
+	const request = await fetch('api/pedido/eliminar/' + id_orden,{
 		
 		method: 'DELETE',
 		

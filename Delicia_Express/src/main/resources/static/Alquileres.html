@@ -43,7 +43,7 @@
         </h2>
 
         <!-- Buscador -->
-        <input type="text" class="buscador" id="buscador" placeholder="Buscar por: Orden o Estado">
+        <input type="text" class="buscador" id="buscador" onkeyup="busqueda()" placeholder="Buscar: Orden o Estado">
         <button class="botonLupa" type="button">
             <img class="logoLupa" src="image/lupa.png">
         </button>                
@@ -51,7 +51,6 @@
 
         <!-- Tabla con datos -->
         <table id="pedidos">
-            <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nro. Orden</th>
@@ -61,7 +60,6 @@
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
-            </thead>
         </table>
         <!-- Fin de la tabla con datos -->
     </div>
