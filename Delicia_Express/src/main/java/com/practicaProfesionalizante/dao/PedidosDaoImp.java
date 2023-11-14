@@ -20,7 +20,7 @@ public class PedidosDaoImp implements PedidosDao {
 	@Transactional
 	public List<Pedidos> getPedidos() {
 		
-		String query="from pedidos";
+		String query="from Pedidos";
 		
 		return entityManager.createQuery(query).getResultList();
 	}

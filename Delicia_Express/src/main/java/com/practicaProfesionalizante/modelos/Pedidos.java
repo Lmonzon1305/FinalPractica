@@ -13,17 +13,17 @@ import jakarta.persistence.Table;
 @Table(name = "pedidos")
 public class Pedidos {
 
-	@Column(name="id")
-	private Long id;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_orden")
 	private Long id_orden;
+	@Column(name="id")
+	private Long id;
 	@Column(name="fecha")
 	private Date fecha;
 	@Column(name="importe")
 	private Float importe;
-	@Column(name="tipoPago")
+	@Column(name="tipo_pago")
 	private String tipoPago;
 	@Column(name="estado")
 	private String estado;
